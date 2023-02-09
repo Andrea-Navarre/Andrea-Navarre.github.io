@@ -91,7 +91,7 @@ var init = function (window) {
              
             if ( circle.y < 0 ) {
                 circle.y = canvas.height;
-  
+            }
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
         

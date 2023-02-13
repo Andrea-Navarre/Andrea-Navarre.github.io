@@ -60,10 +60,10 @@ var init = function (window) {
             //game.checkCirclePosition([]);
 
             // TODO 9 : Iterate over the array
-            for (var V = 0; V < circle.length; V++) {
-                var RV = circles[V];
-                physikz.updatePosition(RV);
-                game.checkCirclePosition(RV);
+            for (var rV = 0; rV < circle.length; rV++) {
+                var rV = circles[v];
+                physikz.updatePosition(rV);
+                game.checkCirclePosition(rV);
             }
             
         }

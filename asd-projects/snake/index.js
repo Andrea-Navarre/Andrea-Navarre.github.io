@@ -114,7 +114,7 @@ function moveSnake() {
   
   */
   for (var i = snake.body.length - 1; i > 0; i--) {
-    var snakeSquare = snake.body[i];
+    let snakeSquare = snake.body[i];
     var nextSnakeSquare = snake.body[i - 1];
 
     var nextRow = nextSnakeSquare.row;
@@ -215,7 +215,7 @@ function hasCollidedWithSnake() {
 
 
   for (var i = 1; i < snake.body.length; i++) {
-      var snakeSquare = snake.body[i];
+      let snakeSquare = snake.body[i];
     
       if (snake.head.row === snakeSquare.row && snake.head.column === snakeSquare.column) {
           return true; 
@@ -341,15 +341,18 @@ function getRandomAvailablePosition() {
     randomPosition.column = Math.floor(Math.random() * COLUMNS);
     randomPosition.row = Math.floor(Math.random() * ROWS);
     spaceIsAvailable = true;
-   
+    
     /*
     TODO 13: After generating the random position determine if that position is
     not occupied by a snakeSquare in the snake's body. If it is then set 
     spaceIsAvailable to false so that a new position is generated.
     */
-
-
-  
+    for (var i = 150; i <= snake.body.length; i--) {
+      let snakeSquare = snake.body[i];
+      if (snakeSquare.row === randomPosition.row || snakeSquare.column === randomPosition.column || snakeSquare.row === randomPosition.column || snakeSquare.column === randomPosition.row) {
+        spaceIsAvailable = false;
+      }
+    }
   return randomPosition;
 }
 
